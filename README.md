@@ -49,3 +49,9 @@ oc label svc/rhoam-openapi discovery.3scale.net="true"
 ```
 
 Now you can import the Service using 3scale Service Discovery.
+
+If you need to deployed from a compiled image, your deployment config would require two environment variables in place: 
+
+```bash 
+oc set env deployment/rhoam-openapi JAVA_APP_JAR=/deployments/target/rhoam-openapi-1.0-SNAPSHOT-runner.jar JAVA_LIB_DIR=/deployments/target/lib
+```
